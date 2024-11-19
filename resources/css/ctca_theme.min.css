@@ -508,12 +508,12 @@
   color: black;
 }  */
 
-:focus {
+/* :focus {
   background: rgba(255, 240, 0, 1);
   border: 2px dashed black;
   outline: 0;
 }
-
+ */
 .navbar .nav-link:focus {
   background: rgba(255, 240, 0, 1);
   border: 2px dashed black;
