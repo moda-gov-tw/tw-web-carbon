@@ -104,7 +104,7 @@
 
 ## License
 
-本專案使用了 [MIT](https://github.com/moda-gov-tw/opendata-frontend/blob/main/frontstage/LICENSE) License
+本專案使用了 [MIT](https://github.com/moda-gov-tw) License
 
 
 ## 備註
