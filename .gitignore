@@ -1,0 +1,9 @@
+/node_modules
+/public/build
+/storage
+/vendor
+.env
+/chrome
+/.cache
+/bootstrap
+/*.mjs
