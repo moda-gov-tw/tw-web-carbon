@@ -28,7 +28,7 @@
         "@tgwf/co2": "^0.15.0",
         "@vueuse/core": "^9.12.0",
         "chart.js": "^4.4.3",
-        "lighthouse": "^12.1.0",
+        "lighthouse": "^12.3.0",
         "sweetalert2": "^11.6.13",
         "url-file-size": "^1.0.5-1",
         "swiper": "^10.0.0"
