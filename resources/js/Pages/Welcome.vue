@@ -194,19 +194,19 @@ const isValidHttpUrl = (str = '') => {
 
         <div class="container" style="padding-top: 1.1rem; text-align: center;">
             <p class="ctca-font" style="font-size: 1.1em; font-weight: 700; color: white; text-indent: 2em;">
-                全球的網際網路消耗了大量電力，大約每年1021太瓦時(TWh)，這是全台灣整年度用電量2794.5億度的3650倍之多。從資料中心到網路傳輸過程，再到我們手中的數十億個連線裝置，都一直不斷地消耗電力，而這其中所產生的碳排放量幾乎等於全球航空業所產生的碳排放！
+                網際網路已是現代生活不可或缺的一部分，但其隱藏的碳排放問題卻常被忽視。為了更直觀地了解網頁瀏覽或設計對環境的影響。本網站開發了「網頁碳排計算器」來計算網頁運行的碳排放，藉此提升社會對於數位行為及環境影響的認識。
             </p>
         </div>
 
         <div class="container" style="text-align: center;">
             <p class="ctca-font" style="font-size: 1.1em; font-weight: 700; color: white; text-indent: 2em;">
-                本站所開發的「網頁碳排計算器」，可以協助大家估算自己設計或瀏覽的網頁產生了多少的碳排放量，估算結果雖然並非是一個非常精準的數據，但希望可以透過這樣的量化工具，具體呈現網頁所產生的碳排量，讓所有人可以建立起數位行為之綠色意識，並用更永續的方式來設計與使用網際網路！
+                同時我們提供「網際網路永續設計指引」，透過具體的網頁設計原則與建議，協助網站設計者以簡潔與高效的方式來降低碳排放，推動技術創新與永續理念的結合，實現環境永續與數位轉型的雙贏。
             </p>
         </div>
 
         <div class="container" style="text-align: center;">
             <p class="ctca-font" style="font-size: 1.1em; font-weight: 700; color: white; text-indent: 2em;">
-                （想了解更多請參考本案產出之<a href="/gain/58/8" title="導向網路永續設計指引">網路永續設計指引</a>）
+                （想了解更多請參考本網站產出之<a href="/gain/58/8" title="導向網路永續設計指引">網際網路永續設計指引</a>）
             </p>
         </div>
 

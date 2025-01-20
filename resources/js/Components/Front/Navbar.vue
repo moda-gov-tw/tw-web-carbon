@@ -67,9 +67,9 @@ const scrollToCenter = () => {
 </script>
 
 <template>
-    <div class="into"><a href="#content" tabindex="1" title="移動至主要內容區塊">到主要內容區塊</a> </div>
+
     <!-- Navbar Start -->
-    <nav class="navbar container-xxl navbar-expand-lg navbar-light shadow sticky-top p-0">
+    <nav class="navbar container-xxl navbar-expand-lg navbar-light shadow  var-top p-0 home-top">
         <div class="col-lg-2">
             <h1>
                 <Link class="logo" :href="route('home')"><img src="/img/home/GreenLogo.svg" class="logo"
@@ -82,6 +82,7 @@ const scrollToCenter = () => {
         </button>
         <div class="col-lg-10 collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="#U" name="U" title="上方區域" accesskey="U" style="padding: 28px 0; color: #fff;">:::</a>
                 <Link :href="route('home')" class="nav-item nav-link ctca-font"
                     v-bind:class="route().current('home') ? 'active' : ''" title="導向首頁">
                 首頁
@@ -126,6 +127,7 @@ const scrollToCenter = () => {
             </div>
         </div>
     </nav>
+    <div class="into"><a href="#content" tabindex="1" title="移動至主要內容區塊">移動至主要內容區塊</a> </div>
     <!-- Navbar End -->
 
     <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

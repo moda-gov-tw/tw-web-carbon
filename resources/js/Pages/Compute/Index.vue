@@ -1,6 +1,6 @@
 <script setup>
 import FrontLayout from '@/Layouts/FrontLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, router } from '@inertiajs/vue3';
 import { co2 } from "@tgwf/co2";
 import Chart from "chart.js/auto";
 import { onMounted } from 'vue';
@@ -13,7 +13,8 @@ const props = defineProps({
     url: String,
     green: Boolean,
     other: Number,
-    video: Number
+    video: Number,
+    uuid: String
 })
 
 const bytesToKB = (bytes) => {
@@ -100,9 +101,13 @@ onMounted(() => {
     });
 });
 
-const ourImage = () => {
-    return "/img/home/messageImage.svg";
+const computeUrl = (str) => {
+    return "/compute_result/" + str;
 };
+
+const descUrl = (str) => {
+    return "到" + str;
+}
 
 </script>
 
@@ -116,11 +121,12 @@ const ourImage = () => {
                     <div class="col-lg-5 pt-4">
                         <a href="#C" name="C" accesskey="C" id="ace_m" target="_self" title="中間區域"
                             style="color: #fff;">:::</a>
-                        <p class="ctca-font ctca-font-size-title" style="color: #fff;">{{ props.title }}</p>
+                        <a href="/" class="ctca-font ctca-font-size-title" title="到首頁">首頁</a>>
+                        <a :href="computeUrl(props.uuid)" :title="descUrl(props.title)"
+                            class="ctca-font ctca-font-size-title">{{
+                                props.title
+                            }}</a>
                     </div>
-                    <!-- <div class="col-lg-7">
-                        <img :src="ourImage()" alt="推廣數位工具" style="width: 100%; height: 130px; border-radius: 20px">
-                    </div> -->
                 </div>
             </div>
         </div>

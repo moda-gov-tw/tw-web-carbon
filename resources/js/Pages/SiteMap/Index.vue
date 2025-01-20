@@ -7,6 +7,9 @@ const props = defineProps({
     detail: String,
 })
 
+const ourImage = () => {
+    return "/img/home/messageImage.svg";
+};
 </script>
 
 <template>
@@ -19,7 +22,8 @@ const props = defineProps({
                     <div class="col-lg-5 pt-4">
                         <a href="#C" name="C" accesskey="C" id="ace_m" target="_self" title="中間區域"
                             style="color: #fff;">:::</a>
-                        <h1 class="ctca-font ctca-font-size-title" style="color: #fff;">{{ props.title }}</h1>
+                        <a href="/" class="ctca-font ctca-font-size-title" title="到首頁">首頁</a>>
+                        <a href="/sitemap" title="到網站導覽" class="ctca-font ctca-font-size-title">網站導覽</a>
                     </div>
                 </div>
             </div>
@@ -47,9 +51,21 @@ const props = defineProps({
                                         網站導覽</li>
                                     <li class="list-group-item"><a :href="route('home')" class="nav-link ctca-font"
                                             rel="noopener" alt="首頁" style=" text-decoration: underline;">首頁</a></li>
+                                    <!-- <li class="list-group-item card-detail" style="background-color: rgb(32, 32, 32);"><a
+                                            :href="route('about')" class="card-detail" rel="noopener" alt="關於本站"
+                                            style="color: white; text-decoration: underline;">關於本站</a></li> -->
                                     <li class="list-group-item card-detail"><a :href="route('gain')"
                                             class="nav-link ctca-font" rel="noopener" alt="成果專區"
                                             style="text-decoration: underline;">成果專區</a></li>
+                                    <!-- <li class="list-group-item card-detail" style="background-color: rgb(32, 32, 32);"><a
+                                            :href="route('award')" class="card-detail" rel="noopener" alt="獎補助專區"
+                                            style="color: white; text-decoration: underline;">獎補助專區</a></li>
+                                    <li class="list-group-item card-detail" style="background-color: rgb(32, 32, 32);"><a
+                                            :href="route('link')" class="card-detail" rel="noopener" alt="相關連結"
+                                            style="color: white; text-decoration: underline;">相關連結</a></li>
+                                    <li class="list-group-item card-detail" style="background-color: rgb(32, 32, 32);"><a
+                                            :href="route('contact_us')" class="card-detail" rel="noopener" alt="聯絡我們"
+                                            style="color: white; text-decoration: underline;">聯絡我們</a></li> -->
                                 </ul>
                             </div>
                         </div>

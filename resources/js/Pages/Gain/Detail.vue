@@ -87,4 +87,17 @@ const fileTitleLoad = (title, name) => {
     </div>
 
   </FrontLayout>
+
+  <a href="#home-top" class="btn btn-lg btn-lg-square back-to-top" alt="回頁首"
+    style="font-size: 0.8rem;background-color: #dfbc15;color: black;">回頁首</a>
 </template>
+
+<style scoped>
+.sticky-top {
+  top: '0px'
+}
+
+.var-top {
+  top: '0px'
+}
+</style>
