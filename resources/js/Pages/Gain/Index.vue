@@ -11,11 +11,17 @@ const props = defineProps({
     gain_type_list: {
         default: () => ({}),
     },
+    type: String,
+    type_desc: String
 })
 
-const detail = (id, type) => {
-    router.visit(`/gain/${id}/${type}`, { preserveScroll: false })
-}
+const urlTitle = (str) => {
+  return "到"+str;
+};
+
+const backUrl = (type) => {
+  return "/gain/" + type;
+};
 
 </script>
 
@@ -29,7 +35,13 @@ const detail = (id, type) => {
                     <div class="col-lg-5 pt-4">
                         <a href="#C" name="C" accesskey="C" id="ace_m" target="_self" title="中間區域"
                             style="color: #fff;">:::</a>
-                        <h1 class="ctca-font ctca-font-size-title" style="color: #fff;">{{ props.title }}</h1>
+                        <a href="/" class="ctca-font ctca-font-size-title" title="到首頁">首頁</a>>
+                        <a href="/gain" :title="urlTitle(props.title)" class="ctca-font ctca-font-size-title">{{
+                            props.title
+                            }}</a>>
+                        <a :href="backUrl(props.type)" :title="urlTitle(props.type_desc)"
+                            class="ctca-font ctca-font-size-title">{{ props.type_desc
+                            }}</a>
                     </div>
                 </div>
             </div>
@@ -40,21 +52,15 @@ const detail = (id, type) => {
                 <thead>
                     <tr>
                         <th class="ctca-font table_font" scope="col" style="text-align: center">標題</th>
-                        <th class="ctca-font table_font" scope="col" style="text-align: center">詳情</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="gain_data in gain_list.data" :key="gain_data.id">
                         <td class="ctca-font table_font">
-                            <a class="nav-link ctca-font"
-                                :href="'/gain/' + gain_data.id + '/' + gain_data.gain_type_id">{{
-                                    gain_data.title }}</a>
-                        </td>
-                        <td style="text-align: center">
-                            <a class="ctca-font" :href="'/gain/' + gain_data.id + '/' + gain_data.gain_type_id"><button
-                                    type="button" class="btn btn-warning ctca-font table_font"
-                                    style="border-radius: 10px;" alt="詳情"
-                                    @click="detail(gain_data.id, gain_data.gain_type_id)">詳情</button></a>
+                            <a class="nav-link" :href="'/gain/' + gain_data.id + '/' + gain_data.gain_type_id">
+                                <span class="ctca-font">{{
+                                    gain_data.title }}</span>
+                            </a>
                         </td>
                     </tr>
                 </tbody>

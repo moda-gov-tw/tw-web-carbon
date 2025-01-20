@@ -8,7 +8,7 @@ const emit = defineEmits(['close', 'open']);
 
 <template>
     <NavbarVue class="bg-dark" />
-    <main class="bg-dark">
+    <main class="bg-dark" id="content">
         <slot />
     </main>
     <Footer class="bg-dark" />

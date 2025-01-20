@@ -38,7 +38,7 @@ class ComputeController extends Controller
         if (parse_url($url)) {
             $uuid = Str::uuid();
 
-            $healthy = ['https://', 'http://'];
+            $healthy = array("https://", "http://");
             $green_url = str_replace($healthy, '', $url);
 
             $ch = curl_init();
@@ -49,9 +49,9 @@ class ComputeController extends Controller
             curl_close($ch);
 
             $obj = json_decode($result);
-            if (isset($obj->green)) {
+            if(isset($obj->green)){
                 $green = $obj->green;
-            } else {
+            }else{
                 $green = false;
             }
 
@@ -74,11 +74,13 @@ class ComputeController extends Controller
 
             $array_answer += ['url' => $url];
 
+            // $command = implode(' ', [\escapeshellarg('/usr/local/bin/php'), escapeshellarg(base_path('artisan')), 'app:execute-lighthouse', $url]);
             $command = implode(' ', [\escapeshellarg('/usr/bin/php'), escapeshellarg(base_path('artisan')), 'app:execute-lighthouse', $url]);
             $result = shell_exec($command);
 
             $json_result = json_decode($result);
             if ($json_result) {
+                // result['audits']['network-requests']['details']['items'];
                 $keyName = 'network-requests';
                 $json_result = $json_result->audits->$keyName->details->items;
 
@@ -161,6 +163,7 @@ class ComputeController extends Controller
                 'green' => $content['green'],
                 'other' => $content['other'],
                 'video' => $content['video'],
+                'uuid' => $uuid
             ]);
         } else {
             return Inertia::render('Welcome', [

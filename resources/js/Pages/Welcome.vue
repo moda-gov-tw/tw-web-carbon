@@ -4,6 +4,7 @@ import { Head, router } from '@inertiajs/vue3';
 import LinkError from '@/Components/LinkError.vue';
 import { ref, onUnmounted } from 'vue';
 import axios from 'axios';
+import SwiperCarouselVue from "@/Components/SwiperCarousel.vue";
 
 const timer = ref()
 
@@ -127,9 +128,20 @@ const isValidHttpUrl = (str = '') => {
             <SwiperCarouselVue />
         </div> -->
 
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5 pt-4">
+                        <a href="#C" name="C" accesskey="C" id="ace_m" target="_self" title="中間區域"
+                            style="color: #fff;">:::</a>
+                        <a href="/" class="ctca-font ctca-font-size-title" title="到首頁">首頁</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container text-center">
             <div class="text-center wow fadeInUp display_flex">
-                <a href="#C" name="C" title="中間區域" accesskey="C" style="padding: 25px 0; color: #fff;">:::</a>
                 <h1 class="carbon_gold ctca-font carbon_title" style="padding-top: 25px; font-size: 1.8em;">網頁碳排計算器</h1>
             </div>
 
