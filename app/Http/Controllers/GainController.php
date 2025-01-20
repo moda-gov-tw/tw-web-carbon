@@ -24,6 +24,8 @@ class GainController extends Controller
         if ($type == '') {
             $gain_type = $gain_type_s->first();
             $type = $gain_type->id;
+        } else {
+            $gain_type = GainType::find($type);
         }
 
         $gains = Gain::query();
@@ -35,7 +37,9 @@ class GainController extends Controller
             'title' => '成果專區',
             'gain_list' => $gains->paginate($perPage),
             'perPage' => (int) $perPage,
-            'gain_type_list' => $gain_type_list
+            'gain_type_list' => $gain_type_list,
+            'type' => $type,
+            'type_desc' => $gain_type->name
         ]);
     }
 
@@ -55,9 +59,13 @@ class GainController extends Controller
 
         $gain->file1 = $gain->gain_folder . $gain->gain_file;
 
+        $gain_type = GainType::find($gain->gain_type_id);
+
         return Inertia::render('Gain/Detail', [
             'title' => '成果專區',
             'gain' => $gain,
+            'type' => $gain->gain_type_id,
+            'type_desc' => $gain_type->name
         ]);
     }
 
@@ -72,5 +80,27 @@ class GainController extends Controller
         }
 
         return $type_arr;
+    }
+
+    public function downLoad(Request $request)
+    {
+        $id = $request->id;
+
+        $title = filter_var($request->title, FILTER_SANITIZE_STRING);
+        $name = filter_var($request->name, FILTER_SANITIZE_STRING);
+
+        $format = explode('.', $title);
+
+        $gain = Gain::findOrFail($id);
+
+        $folder = $gain->gain_folder;
+
+        $filePath = public_path('/img/gain/' . $folder . '/' . $title);
+
+        if (file_exists($filePath)) {
+            $fileName = $name . '.' . $format[1];
+
+            return response()->download($filePath, $fileName);
+        }
     }
 }
