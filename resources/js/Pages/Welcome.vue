@@ -30,7 +30,7 @@ const create = () => {
         }, 3000)
     } else {
 
-        if (isValidHttpUrl(url.value)) {
+        if (isValidURLRegex(url.value)) {
 
             $('#computeModal').modal({ backdrop: 'static', keyboard: false });
             $('#computeModal').modal('show');
@@ -105,17 +105,9 @@ const error_show = (str = '') => {
     }, 5000)
 }
 
-const isValidHttpUrl = (str = '') => {
-    const pattern = new RegExp(
-        '^(https?:\\/\\/)?' + // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$', // fragment locator
-        'i'
-    );
-    return pattern.test(str);
+function isValidURLRegex(url) {
+    const pattern = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-./?%&=]*)?$/i;
+    return pattern.test(url);
 }
 
 </script>
