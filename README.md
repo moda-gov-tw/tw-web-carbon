@@ -104,7 +104,7 @@
 
 ## License
 
-本專案使用了 [MIT](https://github.com/moda-gov-tw) License
+本專案使用了 [Apache](https://github.com/moda-gov-tw) License
 
 
 ## 備註
